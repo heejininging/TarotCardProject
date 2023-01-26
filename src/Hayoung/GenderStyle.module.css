@@ -1,3 +1,6 @@
+
+/* 공통 */
+
 *{padding: 0; margin: 0; text-decoration: none; }
 
 .bg {
@@ -20,6 +23,9 @@
     text-align: center;
     color: white;
 }
+
+
+/* 성별선택페이지 */
 
 .potal {
     width: 320px;
@@ -56,4 +62,31 @@
     font-size: 24px;
     font-weight: 700;
     background-color: white;
+}
+
+
+/* 질문선택페이지 */
+.content{
+    height: 400px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.swiperStyle {
+    position: relative;
+    height: 350px;
+    line-height: 340px;
+    align-items: center;
+    text-align: center;
+}
+
+.selq{
+    display: inline-block;
+    width: 200px;
+    color: white;
+    background-color: rgb(255, 255, 255, 0.2);
+    
 }
