@@ -1,4 +1,4 @@
-import './App.css';
+
 import GenderChoice from './Hayoung/GenderChoice';
 
 function App() {

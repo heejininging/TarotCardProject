@@ -1,0 +1,59 @@
+*{padding: 0; margin: 0; text-decoration: none; }
+
+.bg {
+    background-image: url("./../../public/img/background-star.jpg");
+    flex-direction: column;
+    display: flex;
+    height: 1080px;
+}
+
+.container{
+    margin-top: 80px;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.txt {
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.potal {
+    width: 320px;
+    height: 160px;
+    margin: 0 auto;
+    margin-top: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.left{
+    display: block;
+    float: left;
+    align-items: center;
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    line-height: 160px;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: white;
+}
+
+.right{
+    float: right;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    line-height: 160px;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: white;
+}
