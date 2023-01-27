@@ -8,7 +8,6 @@ import './App.css';
 import ShakeCard from './Heejin/ShakeCard';
 import { DataProvider } from './Hayoung/ContextAPI';
 
-
 function App() {
   return (
 
