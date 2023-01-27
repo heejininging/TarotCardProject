@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Shake from "./Shake.css";
 import 'animate.css';
-import ChoiceCard from "./ChoiceCard";
 
 const ShakeCard = () => {
     // for문으로 랜덤한 20개의 숫자 set배열에 저장하기
@@ -106,6 +105,7 @@ const ShakeCard = () => {
             <div>
                 <button onClick={CardChoice} className="BtnDesign" id="btn1">카드 선택하기</button>
             </div>
+
         </>
     )
 }

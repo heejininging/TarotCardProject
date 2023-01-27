@@ -3,6 +3,7 @@ import "swiper/swiper.scss"; // core Swiper
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import SwiperCore, {Navigation, Pagination} from "swiper";
+import {Link} from "react-router-dom";
 
 import styled from "./GenderStyle.module.css"
 
@@ -16,12 +17,13 @@ const Qselect = () =>{
             <div className={styled.bg}>
 
                 <div className={styled.container}>
-                    <a href="#"><img src="img/tarot-pj.png" alt="logo"/></a>
+                    <a href="#"><Link to="/main"><img src="img/tarot-pj.png" alt="logo"/></Link></a>
                 </div>
 
                 <h1 className={styled.txt}>궁금한 질문을 골라봐</h1>
 
                 <div className={styled.content}>
+                    <Link to="/suffle">
                     <Swiper     className={styled.swiperStyle}
                                 slidesPerView={3} //한번에 보이는 슬라이드 개수
                                 centeredSlides={true} //슬라이드 센터고정
@@ -36,6 +38,7 @@ const Qselect = () =>{
                             <SwiperSlide><a href="#" className={styled.selq}>금전운</a></SwiperSlide>
                             <SwiperSlide><a href="#" className={styled.selq}>학업, 성적운</a></SwiperSlide>
                     </Swiper>
+                    </Link>
                 </div>
 
             </div>
