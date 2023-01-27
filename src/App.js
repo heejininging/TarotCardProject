@@ -7,7 +7,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ShakeCard from './Heejin/ShakeCard';
 
-
 function App() {
   return (
 
