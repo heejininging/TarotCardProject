@@ -1,0 +1,107 @@
+
+/* 공통 */
+
+*{padding: 0; margin: 0; text-decoration: none; list-style: none; }
+
+.bg {
+    background-image: url("./../../public/img/background-star.jpg");
+    flex-direction: column;
+    display: flex;
+    height: 1080px;
+}
+
+.container{
+    margin-top: 80px;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.txt {
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+/* 성별선택페이지 */
+
+.potal {
+    width: 320px;
+    height: 160px;
+    margin: 0 auto;
+    margin-top: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.left{
+    display: block;
+    float: left;
+    align-items: center;
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    line-height: 160px;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: white;
+}
+
+.right{
+    float: right;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 140px;
+    height: 160px;
+    line-height: 160px;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: white;
+}
+
+
+/* 질문선택페이지 */
+.content{
+    height: 400px;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.swiperStyle {
+    position: relative;
+    height: 350px;
+    line-height: 340px;
+    align-items: center;
+    text-align: center;
+}
+
+.selq{
+    display: inline-block;
+    width: 200px;
+    color: white;
+    background-color: rgb(255, 255, 255, 0.2);
+    
+}
+
+/* 타로결과 페이지 */
+.result{
+    height: 500px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
+.rcontent{
+    color: white;
+    align-items: center;
+    margin-top: 50px;
+}
