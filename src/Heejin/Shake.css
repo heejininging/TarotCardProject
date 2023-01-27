@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 카드 가운데에 정렬하기 */
+.items-center {
+    width: 254px;
+    height: 369px;
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+}
+
+.img-float {
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* 카드 움직이기 설정 */
+.img-move0 {
+    animation: rotate_image 1s linear infinite;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.img-move1 {
+    animation: rotate_image 0.7s linear infinite;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.img-move2 {
+    animation: rotate_image2 2s linear infinite;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    position: absolute;
+}
+.img-move3 {
+    animation: rotate_image 1.2s linear infinite;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    position: absolute;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+    /* 오른쪽으로 부드럽게 넘기기 */
+    /* from {transform: translateX(0);
+        animation-timing-function: cubic-bezier(1,0,0.8,1);
+    }
+    to{ transform: translateX(400px);} */
+}
+
+@keyframes rotate_image2 {
+    100% {
+        transform: rotate(250deg);
+    }
+
+}
+
+/* 카드 위치설정 */
+/* 애니메이션 넣을지 말지 고민중 넣으면 크게 도는거 한번 실행 */
+.card-row-0 {
+    top: 0;
+    left: 27px;
+}
+
+.card-row-1 {
+    top: 0px;
+    left: 90px;
+}
+
+.card-row-2 {
+    top: 0;
+    left: 135px;
+}
+
+.card-row-3 {
+    top: 0;
+    left: 189px;
+}
+
+
+.tarot-card {
+    width: 38px;
+    height: 61px;
+    margin: 10px 6px 4px 5px;
+}
+
+
+/* 카드섞인 뒤 질문 바뀜설정 */
+#container {
+    margin: 0 auto;
+    max-width: 520px;
+    text-align: center;
+}
+
+#container p {
+    font-weight: inherit;
+    margin: 80px;
+    position: relative;
+    font-size: 1.25rem;
+    text-align: center;
+    word-break: keep-all;
+}
+
+/* 카드 정렬 */
+.card-set {
+    display: inline;
+}
+
+/* 버튼 디자인 */
+.BtnDesign {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: slateblue;
+    color: white;
+}
+.BtnDesign:hover {
+    animation: tada;
+    animation-duration: 2s;
+}
+
+
+.zoom {
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation: zoomIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
