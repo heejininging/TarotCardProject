@@ -3,16 +3,24 @@ import GenderChoice from './Hayoung/GenderChoice';
 import Home_J from './Jisoo/Home_J';
 import Qselect from './Hayoung/Qselect';
 import ResultPage from './Hayoung/ResultPage';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import ShakeCard from './Heejin/ShakeCard';
+
 
 function App() {
   return (
-    <div className="App">
-      <h3>메인 페이지 메인페이지~</h3>
-      <GenderChoice/>
-      <Home_J/>
-      <Qselect/>
-      <ResultPage/>
-    </div>
+
+    <Routes>
+      <Route path='/main' element={<Home_J />}></Route>
+      <Route path='/gender' element={<GenderChoice />}></Route>
+      <Route path='/select' element={<Qselect />}></Route>
+      <Route path='/suffle' element={<ShakeCard />}></Route>
+      <Route path='/choice' element={<ResultPage />}></Route>
+    </Routes>
+
+
+
   );
 }
 

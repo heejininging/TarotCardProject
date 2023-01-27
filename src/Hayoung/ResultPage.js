@@ -2,6 +2,7 @@
 import { useState } from "react";
 import TarotData from "./TarotData.json";
 import styled from "./GenderStyle.module.css"
+import {Link} from "react-router-dom";
 
 
 const ResultPage = ()  => {
@@ -30,7 +31,7 @@ const ResultPage = ()  => {
         <div className={styled.bg}>
 
             <div className={styled.container}>
-                <a href="#"><img src="img/tarot-pj.png" alt="logo"/></a>
+                <a href="#"><Link to="/main"><img src="img/tarot-pj.png" alt="logo"/></Link></a>
             </div>
 
             <div className={styled.result}>

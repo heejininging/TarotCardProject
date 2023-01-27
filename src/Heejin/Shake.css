@@ -3,6 +3,12 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+/* .bg {
+    background-image: url("img/background-star.jpg");
+    flex-direction: column;
+    display: flex;
+    height: 1080px;
+} */
 
 /* 카드 가운데에 정렬하기 */
 .items-center {
