@@ -1,8 +1,9 @@
 
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import Shake from "./Shake.css";
 import 'animate.css';
+import styled from "../Hayoung/GenderStyle.module.css";
+import {Link} from "react-router-dom";
 
 const ShakeCard = () => {
     // for문으로 랜덤한 20개의 숫자 set배열에 저장하기
@@ -18,6 +19,7 @@ const ShakeCard = () => {
     // const [cardNum , setCard] = useState(arr);
     // console.log(cardNum);
 
+
     let cardOpen = false;
 
     //카드 클릭 시 앞면으로 변경되는 함수
@@ -28,23 +30,23 @@ const ShakeCard = () => {
                 e.target.src = dec;
             }
         }
-         
+
         //클릭하면 그 이미지태그에 클래스 추가
         let tt = e.target.classList.add('zoom');
         console.log(e.target.className);
-        
+
         cardOpen = true;
-        
+
         // 선택결과페이지로 넘어가기
         if (cardOpen === true) {
             // 5초뒤에 화면으로 넘어가게 만들기
             setInterval(animation => {
                 window.location.href = "/choice"
-            },3000)
+            }, 3000)
         }
     }
 
-    function animation(){
+    function animation() {
 
     }
 
@@ -55,9 +57,9 @@ const ShakeCard = () => {
         setView(CardRandom);
         setShake('');
 
-        //버튼의 값 바꾸기
+        //버튼삭제하기
         const btn1 = document.getElementById('btn1');
-        btn1.innerHTML = "결과보기";
+        btn1.remove();
 
     }
 
@@ -91,8 +93,11 @@ const ShakeCard = () => {
     const [coment, setComent] = useState('카드가 섞이는중입니다.');
 
     return (
-        <>
-            <div id="container">
+        <div className={styled.bg}>
+            <div className={styled.container}>
+                <a href="#"><Link to="/main"><img src="img/tarot-pj.png" alt="logo" /></Link></a>
+            </div>
+            <div className={styled.txt}>
                 {/* 운세선택 화면에서 값 가져와서 표기하기 */}
                 <p>{coment}</p>
             </div>
@@ -106,7 +111,7 @@ const ShakeCard = () => {
                 <button onClick={CardChoice} className="BtnDesign" id="btn1">카드 선택하기</button>
             </div>
 
-        </>
+        </div>
     )
 }
 export default ShakeCard;
