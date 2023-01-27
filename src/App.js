@@ -6,18 +6,21 @@ import ResultPage from './Hayoung/ResultPage';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ShakeCard from './Heejin/ShakeCard';
+import { DataProvider } from './Hayoung/ContextAPI';
 
 
 function App() {
   return (
 
-    <Routes>
-      <Route path='/main' element={<Home_J />}></Route>
-      <Route path='/gender' element={<GenderChoice />}></Route>
-      <Route path='/select' element={<Qselect />}></Route>
-      <Route path='/suffle' element={<ShakeCard />}></Route>
-      <Route path='/choice' element={<ResultPage />}></Route>
-    </Routes>
+    <DataProvider>
+      <Routes>
+        <Route path='/main' element={<Home_J />}></Route>
+        <Route path='/gender' element={<GenderChoice />}></Route>
+        <Route path='/select' element={<Qselect />}></Route>
+        <Route path='/suffle' element={<ShakeCard />}></Route>
+        <Route path='/choice' element={<ResultPage />}></Route>
+      </Routes>
+    </DataProvider>
 
 
 

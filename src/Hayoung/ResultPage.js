@@ -13,7 +13,7 @@ const ResultPage = ()  => {
 
     const [list, setList] = useState();
 
-    fetch("https://raw.githubusercontent.com/921126/react-pj20230125/hayoung/src/Hayoung/TarotResult.json")
+    fetch("https://raw.githubusercontent.com/921126/react-pj20230125/main/src/Hayoung/TarotData.json")
     .then((res)=>{
         return res.json();
     })
@@ -29,11 +29,11 @@ const ResultPage = ()  => {
     return (
         <>
         <div className={styled.bg}>
-
             <div className={styled.container}>
                 <a href="#"><Link to="/main"><img src="img/tarot-pj.png" alt="logo"/></Link></a>
             </div>
 
+            <img src="img/opencard6.png" alt="tarot" style={{width:"200px" , marginTop:"50px"}}></img>
             <div className={styled.result}>
                 <ul>
                     {list}
