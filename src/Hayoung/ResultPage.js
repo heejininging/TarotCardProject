@@ -1,30 +1,44 @@
 
-import axios from "axios";
+import { useState } from "react";
+import TarotData from "./TarotData.json";
+import styled from "./GenderStyle.module.css"
+
 
 const ResultPage = ()  => {
 
-    const handleClick = () =>{
+    const test = TarotData.result;
+    /* console.log(test); */
 
-        axios.get("TarotResult.json").
-        then(console.log("성공!")).
-        catch("실패ㅜ");
 
-        fetch("TarotResult.json").then((res)=>{
-            return res.json();
-        }).then((data)=>{
-            console.log(data);
-            console.log(data.resultNo);
+    const [list, setList] = useState();
 
-        });
+    fetch("https://raw.githubusercontent.com/921126/react-pj20230125/hayoung/src/Hayoung/TarotResult.json")
+    .then((res)=>{
+        return res.json();
+    })
+    .then((data)=>{
 
-        
-        
+        const tarotresult = data.result.map((item, index) => 
+            <li key={index} className={styled.rcontent}>{item.content}</li>
+        );  
+        setList(tarotresult);
 
-    }
+    }); 
 
     return (
         <>
-        <button onClick={handleClick}>결과보기</button>
+        <div className={styled.bg}>
+
+            <div className={styled.container}>
+                <a href="#"><img src="img/tarot-pj.png" alt="logo"/></a>
+            </div>
+
+            <div className={styled.result}>
+                <ul>
+                    {list}
+                </ul>
+            </div>
+        </div>
         </>
     )
 

@@ -1,7 +1,7 @@
 
 /* 공통 */
 
-*{padding: 0; margin: 0; text-decoration: none; }
+*{padding: 0; margin: 0; text-decoration: none; list-style: none; }
 
 .bg {
     background-image: url("./../../public/img/background-star.jpg");
@@ -89,4 +89,19 @@
     color: white;
     background-color: rgb(255, 255, 255, 0.2);
     
+}
+
+/* 타로결과 페이지 */
+.result{
+    height: 500px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
+.rcontent{
+    color: white;
+    align-items: center;
+    margin-top: 50px;
 }
