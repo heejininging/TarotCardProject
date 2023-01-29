@@ -4,8 +4,15 @@ import Shake from "./Shake.css";
 import 'animate.css';
 import styled from "../Hayoung/GenderStyle.module.css";
 import {Link} from "react-router-dom";
+import DataContext from "../Hayoung/ContextAPI";
+
 
 const ShakeCard = () => {
+
+    //전역데이터 가져와서 어떤 운세를 골랐는지 띄우기
+    const {info, action} = useContext(DataContext);
+    console.log(info.data);
+
     // for문으로 랜덤한 20개의 숫자 set배열에 저장하기
     let arr = new Set();
     for (let i = 0; i < 100; i++) {
@@ -24,13 +31,17 @@ const ShakeCard = () => {
 
     //카드 클릭 시 앞면으로 변경되는 함수
     const handleChange = (e) => {
-        for (var num = 0; num < 20; num++) {
+        for (let num = 0; num < 20; num++) {
             if (e.target.dataset.id == num) {
-                const dec = `img/opencard${[...arr][num]}.png`;
-                e.target.src = dec;
+                info.data = [...arr][num];
+                console.log(info.data);
+                e.target.src = `/img/opencard${info.data}.png`;
+                //선택한 이미지의 주소를 context데이터에 추가
+                
+                action.setData({data: info.data});
+                break;
             }
         }
-
         //클릭하면 그 이미지태그에 클래스 추가
         let tt = e.target.classList.add('zoom');
         console.log(e.target.className);
@@ -41,17 +52,15 @@ const ShakeCard = () => {
         if (cardOpen === true) {
             // 5초뒤에 화면으로 넘어가게 만들기
             setInterval(animation => {
+                action.setData({data: info.data});
                 window.location.href = "/choice"
             }, 3000)
         }
     }
 
-    function animation() {
-
-    }
 
     //섞는거 멈추기 버튼 누르면 실행되는 함수
-    const [button, setButton] = useState();
+    // const [button, setButton] = useState();
     const CardChoice = () => {
         setComent('카드를 선택하세요.');
         setView(CardRandom);
@@ -90,15 +99,15 @@ const ShakeCard = () => {
     //멈춰있는 카드 useState로 화면표현
     const [view, setView] = useState();
 
-    const [coment, setComent] = useState('카드가 섞이는중입니다.');
+    const [coment, setComent] = useState(`${info.data.data}을 선택하셨군요! 두구두구`);
 
     return (
         <div className={styled.bg}>
             <div className={styled.container}>
-                <a href="#"><Link to="/main"><img src="img/tarot-pj.png" alt="logo" /></Link></a>
+                <span><Link to="/main"><img src="img/tarot-pj.png" alt="logo" /></Link></span>
             </div>
             <div className={styled.txt}>
-                {/* 운세선택 화면에서 값 가져와서 표기하기 */}
+                {/* 선택한 운세리스트의 종류 화면에 출력 */}
                 <p>{coment}</p>
             </div>
             <div className="items-center">
