@@ -6,7 +6,7 @@ import SwiperCore, {Navigation, Pagination} from "swiper";
 import {Link} from "react-router-dom";
 
 import styled from "./GenderStyle.module.css"
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import DataContext from "./ContextAPI";
 
 const Qselect = () =>{
@@ -18,6 +18,9 @@ const Qselect = () =>{
         action.setData({data:e.target.lastChild});
     }
     return (
+
+        <Fragment>
+
             <div className={styled.bg}>
 
                 <div className={styled.container}>
@@ -46,6 +49,7 @@ const Qselect = () =>{
                 </div>
 
             </div>
+        </Fragment>
     )
     
 }
