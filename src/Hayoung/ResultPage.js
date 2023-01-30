@@ -9,9 +9,6 @@ import DataContext from "./ContextAPI";
 
 const ResultPage = ()  => {
 
-    const {info, action} = useContext(DataContext);
-
-
     //화면에 출력될 데이터 관리용 변수
     const [list, setList] = useState();
 
@@ -30,6 +27,11 @@ const ResultPage = ()  => {
         }); 
     },[]);
 
+    const {info} = useContext(DataContext);
+    console.log(info);
+    console.dir(info);
+    console.log(info.data);
+
     return (
         <>
         <div className={styled.bg}>
@@ -38,7 +40,7 @@ const ResultPage = ()  => {
             </div>
 
             {/* 여기의 src에다가 선택한 이미지src주소를 넣어주기~~~!!!! */}
-            <img src={`img/opencard${info.data}.png`} alt="tarot" style={{width:"200px" , marginTop:"50px"}}></img>
+            <img src={info.data} alt="tarot" style={{width:"200px" , marginTop:"50px"}}></img>
             <div className={styled.result}>
                 <ul>
                     {list}

@@ -11,6 +11,7 @@ const ShakeCard = () => {
 
     //전역데이터 가져와서 어떤 운세를 골랐는지 띄우기
     const {info, action} = useContext(DataContext);
+    console.log(info);
     console.log(info.data);
 
     // for문으로 랜덤한 20개의 숫자 set배열에 저장하기
@@ -27,18 +28,17 @@ const ShakeCard = () => {
     // console.log(cardNum);
 
 
-    let cardOpen = false;
+    // let cardOpen = false;
 
     //카드 클릭 시 앞면으로 변경되는 함수
     const handleChange = (e) => {
         for (let num = 0; num < 20; num++) {
             if (e.target.dataset.id == num) {
-                info.data = [...arr][num];
-                console.log(info.data);
-                e.target.src = `/img/opencard${info.data}.png`;
+                const dec = `img/opencard${[...arr][num]}.png`;
+                e.target.src = dec;
                 //선택한 이미지의 주소를 context데이터에 추가
                 
-                action.setData({data: info.data});
+                action.setData({data: e.target.src});
                 break;
             }
         }
@@ -46,16 +46,15 @@ const ShakeCard = () => {
         let tt = e.target.classList.add('zoom');
         console.log(e.target.className);
 
-        cardOpen = true;
+        // cardOpen = true;
 
-        // 선택결과페이지로 넘어가기
-        if (cardOpen === true) {
-            // 5초뒤에 화면으로 넘어가게 만들기
-            setInterval(animation => {
-                action.setData({data: info.data});
-                window.location.href = "/choice"
-            }, 3000)
-        }
+        // 선택결과페이지로 넘어가기 (나쁜자식)
+        // if (cardOpen === true) {
+        //     // 5초뒤에 화면으로 넘어가게 만들기
+        //     setInterval(animation => {
+        //         window.location.href = "/choice"
+        //     }, 3000)
+        // }
     }
 
 
@@ -65,6 +64,9 @@ const ShakeCard = () => {
         setComent('카드를 선택하세요.');
         setView(CardRandom);
         setShake('');
+
+        const btn2 = document.getElementById('btn2');
+        btn2.style.visibility = "visible";
 
         //버튼삭제하기
         const btn1 = document.getElementById('btn1');
@@ -118,6 +120,7 @@ const ShakeCard = () => {
             </div>
             <div>
                 <button onClick={CardChoice} className="BtnDesign" id="btn1">카드 선택하기</button>
+                <button className="BtnDesign" id="btn2"><Link to="/choice">결과페이지이동</Link></button>
             </div>
 
         </div>
