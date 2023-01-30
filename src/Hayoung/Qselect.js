@@ -30,7 +30,7 @@ const Qselect = () =>{
                 
                 <h1 className={styled.txt}>{`${info.data.data}`}구나! 궁금한 질문을 골라봐</h1>
 
-                <div className={styled.content} onClick={handleClick}>
+                <div className={styled.content}>
                     <Link to="/suffle">
                     <Swiper     className={styled.swiperStyle}
                                 slidesPerView={3} //한번에 보이는 슬라이드 개수
@@ -41,10 +41,10 @@ const Qselect = () =>{
                                 Pagination={{ clickable: true }} // 점을 클릭했을 때, 클릭한 슬라이드로 이동
                                 speed={500} // 슬라이드가 넘어가는 속도를 조정 단위는 ms
                             >
-                            <SwiperSlide><span className={styled.selq}>총운</span></SwiperSlide>
-                            <SwiperSlide><span className={styled.selq}>애정운</span></SwiperSlide>
-                            <SwiperSlide><span className={styled.selq}>금전운</span></SwiperSlide>
-                            <SwiperSlide><span className={styled.selq}>학업, 성적운</span></SwiperSlide>
+                            <SwiperSlide><span className={styled.selq} onClick={handleClick}>총운</span></SwiperSlide>
+                            <SwiperSlide><span className={styled.selq} onClick={handleClick}>애정운</span></SwiperSlide>
+                            <SwiperSlide><span className={styled.selq} onClick={handleClick}>금전운</span></SwiperSlide>
+                            <SwiperSlide><span className={styled.selq} onClick={handleClick}>학업, 성적운</span></SwiperSlide>
                     </Swiper>
                     </Link>
                 </div>
