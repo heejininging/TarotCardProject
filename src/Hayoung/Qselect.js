@@ -17,6 +17,7 @@ const Qselect = () =>{
     const handleClick = (e) => {
         action.setData({data:e.target.lastChild});
     }
+    console.log(info);//선택한 값
     return (
 
         <Fragment>

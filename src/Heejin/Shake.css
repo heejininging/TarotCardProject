@@ -122,6 +122,9 @@
     animation: tada;
     animation-duration: 2s;
 }
+#btn2 {
+    visibility: hidden;
+}
 
 
 .zoom {

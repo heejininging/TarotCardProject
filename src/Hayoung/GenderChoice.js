@@ -10,7 +10,7 @@ const GenderChoice = () => {
 
     const handleClick = (e)=>{
         action.setData({data:e.target.lastChild});
-        console.log(info);
+        console.log(info); //text
     } 
     
     return (
