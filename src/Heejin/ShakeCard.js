@@ -36,8 +36,8 @@ const ShakeCard = () => {
             if (e.target.dataset.id == num) {
                 const dec = `img/opencard${[...arr][num]}.png`;
                 e.target.src = dec;
-                //선택한 이미지의 주소를 context데이터에 추가
                 
+                //선택한 이미지의 주소를 context데이터에 추가
                 action.setData({data: e.target.src});
                 break;
             }

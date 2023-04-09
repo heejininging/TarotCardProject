@@ -27,10 +27,12 @@ const ResultPage = ()  => {
         }); 
     },[]);
 
+    //Context로 데이터 가져오기
     const {info} = useContext(DataContext);
-    console.log(info);
-    console.dir(info);
-    console.log(info.data);
+    console.log(info); //선택카드 object
+    console.dir(info); //object
+    console.log(info.data); //선택카드의 url
+
 
     return (
         <>
