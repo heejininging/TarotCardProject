@@ -13,7 +13,7 @@ function App() {
 
     <DataProvider>
       <Routes>
-        <Route path='/main' element={<Home_J />}></Route>
+        <Route path='/' element={<Home_J />}></Route>
         <Route path='/gender' element={<GenderChoice />}></Route>
         <Route path='/select' element={<Qselect />}></Route>
         <Route path='/suffle' element={<ShakeCard />}></Route>
